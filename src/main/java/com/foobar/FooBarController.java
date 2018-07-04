@@ -94,11 +94,7 @@ public class FooBarController {
 	@RequestMapping(value = "/getMenuItem/{currencySymbol}/{base}/{exchange}", method = RequestMethod.GET)
 	public List<OHLCDaily> agetMenuItem(@PathVariable String currencySymbol, @PathVariable String base,
 			@PathVariable String exchange) {
-		/*
-		 * System.out.println("hey "+this.bookRepo.count());
-		 * 
-		 * Iterable<OHLCDaily> i=this.bookRepo.findAll();
-		 */
+		
 		List<OHLCDaily> v = this.chatservice.fetchDailyUpticks(currencySymbol, base, exchange);
 
 		System.out.println(v.size());
